@@ -57,17 +57,26 @@ const operatingSystem = require("os");
 
 //------------------Creating a server request ,response using http module ------------------------
 
-const http = require("http");
-http.createServer((request,response) => {
-    if(request.url==="/")
-        {
-            response.end("Welcome Noddy");
-        }
-    // console.log(request.headers);// displaying the headers of the request
+// const http = require("http");
+// http.createServer((request,response) => {
+//     if(request.url==="/")
+//         {
+//             response.end("Welcome Noddy");
+//         }
+//     // console.log(request.headers);// displaying the headers of the request
     
-    else
-    {
-        response.end("Hello all ! This is not the root route");
-    }
+//     else
+//     {
+//         response.end("Hello all ! This is not the root route");
+//     }
     
-}).listen(4000);
+// }).listen(4000);
+
+
+//-------------------------- REST API --------------------------------
+
+// RE -> REpresrntational
+// S -> State
+// T -> Transfer
+
+//Representing data by sharing after processing 
