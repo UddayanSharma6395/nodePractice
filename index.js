@@ -80,3 +80,22 @@ const operatingSystem = require("os");
 // T -> Transfer
 
 //Representing data by sharing after processing 
+
+const express = require("express");
+// initialize express
+const noddy = express();
+//using json format of express
+noddy.use(express.json());
+
+
+//GET method in express
+noddy.get("/", (request, responce) => {
+    return responce.json({data: "Hello Noddy"});
+});
+
+
+
+
+noddy.listen( 4000 , () => {
+    console.log("Server is running on port 4000");
+});
