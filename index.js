@@ -93,8 +93,40 @@ noddy.get("/", (request, responce) => {
     return responce.json({data: "Hello Noddy"});
 });
 
+noddy.get("/b", (request, responce) => {
+    return responce.json({data: "Hello Noddy this is route b"});
+});
 
+noddy.get("/b/:id", (request, responce) => {
+    const students=[
+        {
+            id: 1,
+            name: "Student1"
+        },
+        {
+            id: 2,
+            name: "Student2"
+        },
+        {
+            id: 3,
+            name: "Student3"
+        },
+        {
+            id: 4,
+            name: "Student4"
+        },
+        {
+            id: 5,
+            name: "Student5"
+        }
+    ];
 
+    const studentID= request.params.id;
+    const getStudent= students.filter((student) => student.id === parseInt(studentID));
+    return responce.json({data: getStudent});
+
+    return responce.json({data: "Hello Noddy"});
+});
 
 noddy.listen( 4000 , () => {
     console.log("Server is running on port 4000");
